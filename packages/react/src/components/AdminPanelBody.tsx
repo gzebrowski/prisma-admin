@@ -598,31 +598,29 @@ const AdminPanelBody: React.FC = () => {
 																const { field } = parseFieldName(fieldDef);
 																const { fieldVal, valueStyle } = getValueAndStyle(field, item[field]);
 																return (
-																	<>
+																	<TableCell key={item.$pk + '__' + field} style={valueStyle}>
 																		{index2 ? (
-																			<>
+																		<>
 																			{fieldToFieldTypeMap && fieldToFieldTypeMap[field] === 'image' && item[field] ? (
 																			<>
 																			<img src={item['$' + field + '__thumbnail'] || item['$' + field + '__url']} alt="" />
 																			</>
 																			) : (
-																			<TableCell key={item.$pk + '__' + field} style={valueStyle}>
+																				<>
 																				{fieldVal}
-																			</TableCell>
+																				</>
 																			)}
-																			</>
+																		</>
 																		) : (
-																			<TableCell key={item.$pk + '__' + field}>
-																				<Button
-																					style={valueStyle}
-																					onClick={() => setEditMode(item.$pk)}
-																					variant="link"
-																					title={item[field].toString()}>
-																					{fieldVal}
-																				</Button>
-																			</TableCell>
+																			<Button
+																				style={valueStyle}
+																				onClick={() => setEditMode(item.$pk)}
+																				variant="link"
+																				title={item[field].toString()}>
+																				{fieldVal}
+																			</Button>
 																		)}
-																	</>
+																	</TableCell>
 																);
 															},
 														)}

@@ -642,6 +642,10 @@ const ModelObjectForm: React.FC<AddObjectOrEditProps> = ({
 		if (onModelRetrieve) {
 			onModelRetrieve(result);
 		}
+		objectData.fieldsAndTypes.forEach((fieldDef) => {
+			const field = fieldDef.column_name;
+			getFieldType(field, true);
+		});
 	}, [objectData]);
 
 	const formatCellValue = (
@@ -715,16 +719,18 @@ const ModelObjectForm: React.FC<AddObjectOrEditProps> = ({
         }
         return relTo;
 	};
-	const getFieldType = (field: string): string => {
+	const getFieldType = (field: string, setCache: boolean=false): string => {
 		const fieldType = fieldTypesMap[field];
 		if (fieldType) {
 			return fieldType;
 		}
 		const determinedType = findFieldType(field);
-		setFieldTypesMap((prev) => ({
-			...prev,
-			[field]: determinedType,
-		}));
+		if (setCache) {
+			setFieldTypesMap((prev) => ({
+				...prev,
+				[field]: determinedType,
+			}));
+		}
 		return determinedType;
 	};
 	const findFieldType = (field: string): string => {

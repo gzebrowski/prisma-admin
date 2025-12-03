@@ -65,10 +65,8 @@ const DataFilters: React.FC<DataFiltersProps> = ({ model, modelItems, currentFil
 
     return (
         <Sheet>
-            <SheetTrigger>
-                <Button variant="primary-outline" className="admin-ml-2">
-                    <FilterIcon />
-                </Button>
+            <SheetTrigger className="admin-ml-2">
+                <FilterIcon />
             </SheetTrigger>
             <SheetContent className="admin-w-96">
                 <SheetHeader>
