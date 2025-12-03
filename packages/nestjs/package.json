@@ -1,0 +1,38 @@
+{
+  "name": "@prisma-admin/nestjs",
+  "version": "1.0.0",
+  "description": "NestJS integration for Prisma Admin",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "prisma",
+    "admin",
+    "nestjs",
+    "typescript"
+  ],
+  "author": "Grzegorz Zebrowski",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma-admin/core": "^1.0.0",
+    "luxon": "^3.4.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.3.0",
+    "@types/uuid": "^9.0.0",
+    "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=9.0.0",
+    "@nestjs/core": ">=9.0.0",
+    "@prisma/client": ">=4.0.0",
+    "reflect-metadata": ">=0.1.13",
+    "rxjs": ">=7.0.0"
+  }
+}

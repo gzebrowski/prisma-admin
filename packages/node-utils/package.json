@@ -1,0 +1,55 @@
+{
+  "name": "@prisma-admin/node-utils",
+  "version": "1.0.0",
+  "description": "Node.js utilities for Prisma Admin - file uploads, image processing, and more",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./s3-storage": {
+      "types": "./dist/s3-storage.d.ts",
+      "default": "./dist/s3-storage.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "prisma",
+    "admin",
+    "node-utils",
+    "file-upload",
+    "s3",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.33.0",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.940.0",
+    "@aws-sdk/s3-request-presigner": "^3.940.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "@aws-sdk/client-s3": ">=3.0.0",
+    "@aws-sdk/s3-request-presigner": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@aws-sdk/client-s3": {
+      "optional": true
+    },
+    "@aws-sdk/s3-request-presigner": {
+      "optional": true
+    }
+  }
+}

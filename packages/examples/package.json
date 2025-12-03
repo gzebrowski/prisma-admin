@@ -1,0 +1,20 @@
+{
+  "name": "@prisma-admin/examples",
+  "version": "1.0.0",
+  "description": "Example implementations for Prisma Admin",
+  "private": true,
+  "scripts": {
+    "build": "echo \"Examples don't need building\"",
+    "dev": "echo \"Examples are for reference only\"",
+    "clean": "echo \"Nothing to clean\"",
+    "test": "echo \"No tests for examples\""
+  },
+  "keywords": [
+    "prisma",
+    "admin",
+    "examples",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

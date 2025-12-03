@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "composite": true
+  },
+  "references": [
+    { "path": "./packages/core" },
+    { "path": "./packages/nestjs" },
+    { "path": "./packages/express" },
+    { "path": "./packages/fastify" },
+    { "path": "./packages/adonis" },
+    { "path": "./packages/react" },
+    { "path": "./packages/node-utils" }
+  ],
+  "files": []
+}

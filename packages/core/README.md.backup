@@ -1,0 +1,73 @@
+# @prisma-admin/core
+
+Core functionality for Prisma Admin - framework-agnostic admin panel generator.
+
+## Installation
+
+```bash
+npm install @prisma-admin/core
+```
+
+## Usage
+
+The core package provides abstract classes and interfaces that can be implemented by specific framework integrations.
+
+### AdminModelInterface
+
+Main interface for defining admin models:
+
+```typescript
+import { AdminModelInterface } from '@prisma-admin/core';
+
+export class MyModelAdmin implements AdminModelInterface {
+  modelName = 'MyModel';
+  
+  getFieldDefinitions() {
+    return {
+      id: { data_type: 'uuid', label: 'ID' },
+      name: { data_type: 'string', label: 'Name' },
+      email: { data_type: 'string', label: 'Email' },
+    };
+  }
+
+  getInlineDefinitions() {
+    return {
+      relatedItems: {
+        model: 'RelatedModel',
+        fk_name: 'parentId',
+        mode: 'table'
+      }
+    };
+  }
+}
+```
+
+### BaseAdmin
+
+Abstract base class with common functionality:
+
+```typescript
+import { BaseAdmin } from '@prisma-admin/core';
+
+export class MyAdmin extends BaseAdmin {
+  // Implementation specific to your framework
+}
+```
+
+### Utilities
+
+The package also exports utility functions for common operations:
+
+```typescript
+import { AdminUtils } from '@prisma-admin/core';
+
+// Validate field definitions
+AdminUtils.validateFieldDefinition(field);
+
+// Format values for display
+AdminUtils.formatValue(value, fieldType);
+```
+
+## API Reference
+
+See the TypeScript definitions for complete API documentation.

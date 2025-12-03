@@ -1,0 +1,38 @@
+{
+  "name": "prisma-admin",
+  "version": "1.0.0",
+  "description": "Modern admin panel generator for Prisma with support for multiple frameworks",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "clean": "npm run clean --workspaces",
+    "publish-all": "npm run build && npm publish --workspaces --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/prisma-admin.git"
+  },
+  "keywords": [
+    "prisma",
+    "admin",
+    "panel",
+    "nestjs",
+    "react",
+    "typescript",
+    "cms"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "typescript": "^5.0.2"
+  }
+}
